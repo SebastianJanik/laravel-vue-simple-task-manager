@@ -42,5 +42,3 @@ Useful commands:
 - `src/` holds the backend, split into modules (`Project`, `Task`, `Shared`), each with Domain, Application, Infrastructure and Presentation layers.
 - `resources/js/` holds the Vue 3 frontend, which talks to the JSON API under `/api`.
 - `tests/` has unit tests for the domain and feature tests for the handlers and API.
-
-Design decisions are recorded in [docs/architecture-decisions.md](docs/architecture-decisions.md).
