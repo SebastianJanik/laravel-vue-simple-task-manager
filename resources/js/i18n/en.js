@@ -1,0 +1,40 @@
+export default {
+    common: {
+        loading: 'Loading…',
+        delete: 'Delete',
+        cancel: 'Cancel',
+        deleteAria: 'Delete {name}',
+        requestFailed: 'Request failed with status {status}',
+    },
+    theme: {
+        light: '☀️ Light',
+        dark: '🌙 Dark',
+    },
+    deleteConfirmation: {
+        body: '“{name}” will be permanently deleted.',
+    },
+    projects: {
+        title: 'Projects',
+        newPlaceholder: 'New project name',
+        add: 'Add project',
+        empty: 'No projects yet.',
+        created: 'Project created',
+        deleted: 'Project deleted',
+        deleteTitle: 'Delete project?',
+    },
+    tasks: {
+        back: '← Projects',
+        project: 'Project:',
+        newPlaceholder: 'New task name',
+        add: 'Add task',
+        empty: 'No tasks yet.',
+        created: 'Task created',
+        renamed: 'Task renamed',
+        deleted: 'Task deleted',
+        orderSaved: 'Order saved',
+        deleteTitle: 'Delete task?',
+        dragToReorder: 'Drag to reorder',
+        nameAria: 'Task name',
+        priorityAria: 'Priority {priority}',
+    },
+};

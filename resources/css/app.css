@@ -1,0 +1,66 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+    --color-danger: var(--color-red-600);
+    --color-danger-dark: var(--color-red-400);
+    --color-muted: var(--color-gray-600);
+    --color-muted-dark: var(--color-gray-400);
+}
+
+html.dark {
+    color-scheme: dark;
+}
+
+/* The colour lives on <html> so the fixed background layer (z-index -1) paints above it instead of below <body>. */
+html {
+    background-color: #fff;
+}
+
+html.dark {
+    background-color: #000;
+}
+
+.page-background {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: url('../images/background.png') center / contain no-repeat;
+    opacity: 0.4;
+}
+
+/* The logo sits on a white backdrop: inverting turns it black, matching the dark page, and keeps the blue via hue-rotate. */
+html.dark .page-background {
+    filter: invert(1) hue-rotate(180deg) brightness(0.8);
+    opacity: 0.5;
+}
+
+@layer components {
+    .card {
+        @apply rounded border border-gray-300 bg-white dark:border-gray-700 dark:bg-gray-900;
+    }
+
+    .field {
+        @apply rounded border border-gray-300 px-3 py-2 dark:border-gray-600 dark:bg-gray-900;
+    }
+
+    .bare-field {
+        @apply rounded border-0 bg-transparent px-1 py-1 focus:ring-1 focus:ring-blue-400;
+    }
+
+    .task-ghost {
+        @apply border-dashed border-blue-300 bg-blue-50 opacity-40 dark:bg-blue-500/10;
+    }
+
+    .task-ghost > * {
+        visibility: hidden;
+    }
+
+    .task-chosen {
+        @apply shadow-md;
+    }
+}
