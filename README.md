@@ -9,7 +9,7 @@ A small Laravel + Vue 3 app for managing tasks grouped by project.
 
 ## Requirements
 
-Docker with Compose. PHP 8.5, Composer, Node and MySQL 8.4 all run in containers (Laravel Sail).
+PHP 8.3 or higher, Composer, Node and MySQL. The recommended setup is Docker with Compose: Laravel Sail runs PHP 8.5, Composer, Node and MySQL 8.4 in containers, so nothing needs to be installed locally.
 
 ## Setup and run
 
@@ -28,14 +28,6 @@ Useful commands:
 ./vendor/bin/sail artisan test   # run the test suite
 ./vendor/bin/sail down           # stop the containers
 ```
-
-## Deployment
-
-1. Install dependencies: `composer install --no-dev --optimize-autoloader` and `npm ci && npm run build`.
-2. Set `APP_ENV=production`, `APP_DEBUG=false` and the database credentials in `.env`, then run `php artisan key:generate` if no key is set.
-3. Run `php artisan migrate`.
-4. Cache config: `php artisan config:cache route:cache view:cache`.
-5. Point the web server's document root at `public/`.
 
 ## Structure
 
